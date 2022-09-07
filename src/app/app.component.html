@@ -1,4 +1,68 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+
+<mat-form-field appearance="legacy">
+  <mat-label>Choose Date Range</mat-label>
+  <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+    <input
+      matStartDate
+      formControlName="start"
+      placeholder="Start Date"
+      [value]="startDate"
+    />
+    <input
+      matEndDate
+      formControlName="end"
+      placeholder="End Date"
+      [value]="endDate"
+    />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker (opened)="onOpen()"></mat-date-range-picker>
+</mat-form-field>
+
+<div style="display: none">
+  <div class="datepicker-footer" #datepickerFooter id="ss">
+    <mat-list>
+      <mat-list-item role="listitem">
+        <button mat-raised-button (click)="today()" #todayButton>Today</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button (click)="yestarday()" #doneButton>
+          Yesterday
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-raised-button (click)="lmonth()" #doneButton>
+          Last Month
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-raised-button (click)="thismonth()" #doneButton>
+          This Month
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-raised-button (click)="last_7_days()" #doneButton>
+          Last 7 days
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<div style="display: none">
+  <div class="datepicker-footer1" #datepickerFooter1>
+    <button
+      mat-raised-button
+      (click)="cancel()"
+      #doneButton
+      style="margin:10px"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button (click)="submit()" #doneButton>Submit</button>
+  </div>
+</div>

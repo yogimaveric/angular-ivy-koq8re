@@ -1,3 +1,45 @@
 p {
   font-family: Lato;
 }
+.datepicker-footer {
+  width: 100%;
+  padding: 0 1.125rem 1.125rem 1.125rem;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+datepicker-footer1{
+width: 100%;
+padding: 1rem;
+display: flex;
+box-sizing: border-box;
+justify-content: flex-start;
+}
+::ng-deep .mat-datepicker-content {
+  width: 500px !important;
+}
+::ng-deep .mat-calendar-body-cell-content{
+color: #333333 !important;
+opacity: 0.8 !important;
+}
+.mat-raised-button:hover{
+background-color: #2E42AB;
+color:#ffffff !important;
+opacity: 0.8 !important;
+}
+::ng-deep .mat-calendar-body-selected {
+background-color: #2E42AB !important;
+color: #fff !important;
+}
+.mat-raised-button{
+width: 100px !important;
+}
+#ss{
+top: 0;
+position: absolute;
+left: 0;
+float: right;
+display: flex;
+justify-content: end;
+margin-top: 10vh;
+}
